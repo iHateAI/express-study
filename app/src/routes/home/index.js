@@ -5,8 +5,11 @@ const router = express.Router();
 
 const ctrl = require('./home.ctrl');
 
-router.get('/', ctrl.home);
+// 그냥 화면 보여주는 곳
+router.get('/', ctrl.output.home);
+router.get('/login', ctrl.output.login);
 
-router.get('/login', ctrl.login);
+// 기능
+router.post('/login', ctrl.process.login);
 
 module.exports = router;
